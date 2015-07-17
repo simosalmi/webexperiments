@@ -6,7 +6,8 @@ arr1.forEach(function(el, i, arr) {
 	arr.push(i + 1);
 });
 
-console.log(arr1);
+console.log(arr1); // logs [2, 6, 4, 1, 2, 3]
+// it doesn't iterate on elements added/removed after the call to forEach
 
 // see how it skips undefined indexes
 var arr2 = [];
