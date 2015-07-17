@@ -1,4 +1,23 @@
-'use strict';
+// see how it changes the array itself
+var arr1 = [1, 3, 2];
 
-var myFn = function(param1, param2, param1) {};
-// it's a SyntaxError: Strict mode function may not have duplicate parameter names
+arr1.forEach(function(el, i, arr) {
+	arr[i] = 2*el;
+	arr.push(i + 1);
+});
+
+console.log(arr1);
+
+// see how it skips undefined indexes
+var arr2 = [];
+
+arr2[1] = 0;
+
+arr2[3] = 1;
+
+arr2.forEach(function(el, i, arr) {
+	console.log(i, el);
+}); 
+// logs:
+// 1 0
+// 3 1 
